@@ -25,7 +25,6 @@ function Get-GNMHEXOMailbox
         }
 
         # Check if `Exchange Online Management` module has been installed
-
         $getEXOModule = Get-InstalledModule -Name "ExchangeOnlineManagement" -ErrorAction SilentlyContinue
         if (-not $getEXOModule) {
             Write-Host "The module 'Exchange Online Management' is missing. To continue, it will need to be installed." -ForegroundColor Yellow
@@ -52,7 +51,6 @@ function Get-GNMHEXOMailbox
         }
 
         # Check if the service `WinRM or Windows Remote Management` is running
-
         $getWinRM = Get-Service -Name "WinRM"
         if (($getWinRM.Status) -eq "Stopped")
         {
@@ -61,7 +59,6 @@ function Get-GNMHEXOMailbox
         }
 
         # Connect to 'Exchange Online'
-        
         $connectEXO = Connect-ExchangeOnline @ConnectionArgs
 
         # Get all properties related to the user

@@ -3,7 +3,6 @@ function Get-GNMHEXOMailbox
 
     [CmdletBinding()]
     param (
-
         [Parameter(
         Mandatory=$true,
         ValueFromPipeline,
